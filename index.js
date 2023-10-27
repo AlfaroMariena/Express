@@ -1,13 +1,31 @@
-const http=require('http');
+ 
+const express=require('express');
+const app=express();
 
-const server=http.createServer((req,res)=>{
-    res.status=200;
-    res.end('Hola a todos los geis del mundo en especial a KALET QUE ME CAE MAL ');
-
+app.get('/',(req,res)=>{
+    res.send('hello world');
 });
 
-server.listen(3000,()=>{
-    console.log('Server on port 3000');
+app.get('/about',(req,res)=>{
+    res.send('about me ');
 });
 
+app.get('/contact',(req,res)=>{
+    res.send('From Contact');
+});
+
+app.get('/test',(req,res)=>{
+    res.send('<h1>TEST</h1> ');
+});
+
+
+
+
+
+
+app.listen(5000,()=>{
+    console.log('Server on port 5000')
+});
+
+ 
  
